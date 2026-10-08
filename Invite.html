@@ -7,7 +7,7 @@
 <meta name="description" content="Marriage ceremony of Dr. Nadia Ahmed and Engr. Mohammad Wajid Ali — Friday, 6 November 2026, Hanamkonda.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Pinyon+Script&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600&family=Pinyon+Script&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#FBF8F4; --lattice:#DCD5E0; --maroon:#7A1F2B; --gold:#B08A2E; --gold-soft:#E9DDB8;
@@ -116,9 +116,124 @@ h2{font-family:"Pinyon Script",cursive;font-weight:400;color:var(--maroon);font-
 footer{text-align:center;padding:24px 16px 40px;color:var(--muted);font-size:.9rem}
 footer .arabic{font-size:1.2rem;display:block;color:var(--gold)}
 @media (max-width:380px){.actions{grid-template-columns:1fr}.timeline::before{left:4.6rem}.timeline li{grid-template-columns:4rem 1fr}.timeline li::after{left:calc(4.6rem - 5px)}}
+
+/* ---------- Envelope opening ---------- */
+#couple:focus{outline:none}
+body.locked{overflow:hidden;touch-action:none}
+.stage{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;overflow:hidden;padding:24px 0}
+.scene{--w:min(78vw,340px);position:relative;width:var(--w);height:var(--w);perspective:1100px;margin-top:calc(var(--w)*.35)}
+.scene>*{position:absolute}
+/* envelope layers */
+.e-back{inset:0;background:#5C1520;box-shadow:0 22px 50px rgba(60,10,20,.30);transition:transform .9s cubic-bezier(.6,0,.4,1)}
+.e-back::before{content:"";position:absolute;inset:0 0 50%;background:
+  repeating-linear-gradient(45deg,transparent 0 9px,rgba(201,164,76,.38) 9px 10px),
+  repeating-linear-gradient(-45deg,transparent 0 9px,rgba(201,164,76,.38) 9px 10px),#6A1A25}
+.e-front{inset:0;z-index:3;filter:drop-shadow(0 -2px 3px rgba(0,0,0,.25));transition:transform .9s cubic-bezier(.6,0,.4,1);pointer-events:none}
+.e-front i{position:absolute;inset:0}
+.e-front .sides{background:#7A1F2B;clip-path:polygon(0 0,45% 47%,47.5% 50%,52.5% 50%,55% 47%,100% 0,100% 100%,0 100%)}
+.e-front .bottom{background:#701C27;filter:drop-shadow(0 -2px 2px rgba(0,0,0,.2));clip-path:polygon(0 100%,36% 54%,64% 54%,100% 100%)}
+.e-flap{left:0;right:0;top:0;height:56%;z-index:4;transform-origin:top center;transform-style:preserve-3d;
+  transition:transform .75s ease-in-out, z-index 0s linear .37s}
+.e-flap b{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,52% 97%,50% 100%,48% 97%);backface-visibility:hidden}
+.e-flap .out{background:#842532;box-shadow:inset 0 2px 0 rgba(255,255,255,.06)}
+.e-flap .in{transform:rotateX(180deg);background:
+  repeating-linear-gradient(45deg,transparent 0 9px,rgba(201,164,76,.38) 9px 10px),
+  repeating-linear-gradient(-45deg,transparent 0 9px,rgba(201,164,76,.38) 9px 10px),#6A1A25}
+.seal{left:50%;top:56%;z-index:5;width:58px;height:58px;margin:-30px 0 0 -29px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ECD592,#B08A2E 60%,#866519);color:#5A1520;display:grid;place-items:center;
+  font:400 1.35rem/1 "Pinyon Script","Snell Roundhand",cursive;box-shadow:0 3px 8px rgba(0,0,0,.35),inset 0 0 0 4px rgba(255,255,255,.18);
+  transition:transform .4s ease,opacity .4s ease}
+/* the card */
+.pcard{left:5%;top:4%;width:90%;height:92%;z-index:2;perspective:1400px;
+  transition:transform 1s cubic-bezier(.2,.8,.2,1), z-index 0s linear .5s}
+.flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:transform .9s cubic-bezier(.4,.1,.2,1)}
+.pcard.flipped .flip{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;padding:2.2%;-webkit-backface-visibility:hidden;backface-visibility:hidden;
+  background:linear-gradient(135deg,#B08A2E,#EAD69A 30%,#B8923A 55%,#E3CC86 80%,#A27D26);box-shadow:0 10px 30px rgba(43,26,29,.18)}
+.face.back{transform:rotateY(180deg)}
+.pcard-in{container-type:size;height:100%;overflow:hidden;background:#FFFDF8;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:0 7%;color:#2B1A1D;background-image:radial-gradient(rgba(176,138,46,.06) 1px,transparent 1px);background-size:4px 4px}
+.pcard p{margin:0}
+.pcard .ar{font-family:"Amiri",serif;color:#B08A2E;font-size:8.5cqw;line-height:1.6;direction:rtl}
+.pcard .sm{font-family:"Spectral",Georgia,serif;font-weight:400;font-size:4.3cqw;letter-spacing:.14em;text-transform:uppercase;line-height:1.75;margin-top:3cqh}
+.pcard .nm{font:400 16cqw/1.12 "Pinyon Script","Snell Roundhand",cursive;color:#7A1F2B;margin-top:3cqh}
+.pcard .amp{font:italic 300 6cqw/1.2 "Spectral",Georgia,serif;color:#B08A2E}
+.pcard .nm2{margin-top:0}
+.pcard .dt{margin-top:4cqh}
+/* Urdu back */
+.ur{direction:rtl;font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Urdu Typesetting",serif}
+.pcard .ur-sm{font-size:5.4cqw;line-height:2.1;color:#2B1A1D;margin-top:1cqh}
+.pcard .ur-nm{font-size:11.5cqw;line-height:1.9;color:#7A1F2B;font-weight:600}
+.pcard .ur-amp{font-size:6cqw;line-height:1.9;color:#B08A2E}
+.pcard .ur-dt{font-size:5.4cqw;line-height:2.1;color:#2B1A1D;margin-top:1cqh}
+.flipbtn{display:inline-flex;align-items:center;gap:.5em;padding:.55rem 1.1rem;border:1.5px solid var(--gold);background:var(--card);color:var(--maroon);
+  font:600 .95rem/1.2 "Spectral",Georgia,serif;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .4s;border-radius:999px}
+.flipbtn .u{font-family:"Noto Nastaliq Urdu",serif;font-weight:400;line-height:1}
+.stage.s3 .flipbtn{opacity:1;pointer-events:auto;transition-delay:.9s}
+/* sequence */
+.stage.s1 .e-flap{transform:rotateX(180deg);z-index:1}
+.stage.s1 .seal{transform:scale(.3);opacity:0}
+.stage.s2 .pcard{transform:translateY(-62%)}
+.stage.s3 .pcard{transform:translateY(-16%) scale(1.2);z-index:6}
+.stage.s3 .e-back,.stage.s3 .e-front,.stage.s3 .e-flap{transform:translateY(140vh)}
+.stage.s3 .e-flap{transform:translateY(140vh) rotateX(180deg);transition:transform .9s cubic-bezier(.6,0,.4,1)}
+/* controls */
+.hint{display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--maroon);font:400 .95rem "Spectral",serif;background:none;border:0;cursor:pointer;transition:opacity .4s}
+.hint svg{animation:nudge 1.6s ease-in-out infinite}
+.hint.down svg{transform:rotate(180deg);animation:nudgeDown 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-8px);opacity:1}}
+@keyframes nudgeDown{0%,100%{transform:rotate(180deg) translateY(0);opacity:.5}50%{transform:rotate(180deg) translateY(-8px);opacity:1}}
+.stage.s1 .hint{opacity:0;pointer-events:none}
+.stage.s3 .hint{opacity:1;pointer-events:auto}
+.replay{position:absolute;left:14px;top:50%;width:52px;height:52px;border-radius:50%;border:0;background:var(--card);color:var(--ink);
+  box-shadow:0 4px 16px rgba(43,26,29,.18);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .4s}
+.stage.s3 .replay{opacity:1;pointer-events:auto;transition-delay:.9s}
+@media (prefers-reduced-motion:reduce){
+  .stage *{transition-duration:.01s!important;transition-delay:0s!important;animation:none!important}
+}
 </style>
 </head>
-<body>
+<body class="locked">
+<header class="stage" id="stage" aria-label="Invitation envelope">
+  <div class="scene" id="scene">
+    <div class="e-back"></div>
+    <div class="pcard" id="pcard">
+      <div class="flip">
+        <div class="face front" aria-label="Invitation, English">
+          <div class="pcard-in">
+            <p class="ar" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+            <p class="sm">You are invited to<br>the marriage ceremony of</p>
+            <p class="nm">Nadia</p>
+            <p class="amp">with</p>
+            <p class="nm nm2">Wajid</p>
+            <p class="sm dt">Friday, 6th November 2026<br>Subedari, Hanamkonda</p>
+          </div>
+        </div>
+        <div class="face back" aria-label="Invitation, Urdu" lang="ur">
+          <div class="pcard-in">
+            <p class="ar" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+            <p class="ur ur-sm">آپ کو تقریبِ نکاح میں مدعو کیا جاتا ہے</p>
+            <p class="ur ur-nm">نادیہ</p>
+            <p class="ur ur-amp">ہمراہ</p>
+            <p class="ur ur-nm">واجد</p>
+            <p class="ur ur-dt">بروز جمعہ، ۶ نومبر ۲۰۲۶ء<br>صوبیداری، ہنمکنڈہ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="e-front"><i class="sides"></i><i class="bottom"></i></div>
+    <div class="e-flap"><b class="out"></b><b class="in"></b></div>
+    <div class="seal" id="seal" aria-hidden="true">N&amp;W</div>
+  </div>
+  <button class="flipbtn" id="flipBtn" aria-pressed="false"><span id="flipLabel">Read in <span class="u" lang="ur">اردو</span></span></button>
+  <button class="hint" id="openBtn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+    <span id="hintText">Swipe up to open</span>
+  </button>
+  <button class="replay" id="replay" aria-label="Replay envelope animation">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4v4h4"/></svg>
+  </button>
+</header>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -139,7 +254,7 @@ footer .arabic{font-size:1.2rem;display:block;color:var(--gold)}
       <g><line x1="66" y1="0" x2="66" y2="42" stroke="var(--gold)" stroke-width="1.5"/><circle cx="66" cy="18" r="3" fill="none" stroke="var(--gold)"/><use href="#drop" x="58" y="40" width="16" height="22" fill="var(--gold)"/></g>
     </svg>
 
-    <p class="bismillah arabic" lang="ar">بِسْمِ ٱللّٰهِ ٱلرَّحْمٰنِ ٱلرَّحِيْمِ</p>
+    <p class="bismillah arabic" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
     <p class="small">In the name of Allah, the Most Beneficent &amp; the Most Merciful</p>
 
     <p class="guardian">Under the guardianship of
@@ -148,7 +263,7 @@ footer .arabic{font-size:1.2rem;display:block;color:var(--gold)}
     <p class="hosts">Mrs. &amp; Mr. Alhaj Ateeq Ahmed</p>
     <p class="solicit">solicit your gracious presence on the auspicious occasion of the marriage ceremony of their eldest daughter</p>
 
-    <h1 id="couple">
+    <h1 id="couple" tabindex="-1">
       <span class="name">Dr. Nadia Ahmed</span>
       <span class="cred">BDS</span>
       <span class="with">with</span>
@@ -204,7 +319,7 @@ footer .arabic{font-size:1.2rem;display:block;color:var(--gold)}
 
 <section class="dua" aria-label="Dua for the couple">
   <div class="panel">
-    <p class="arabic" lang="ar">بَارَكَ ٱللّٰهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+    <p class="arabic" lang="ar">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
     <p>Oh Allah, guide this marriage to the best of understanding, happiness, prosperity and success. Aameen.</p>
   </div>
 </section>
@@ -212,8 +327,7 @@ footer .arabic{font-size:1.2rem;display:block;color:var(--gold)}
 <section class="contact" aria-labelledby="hosts">
   <div class="panel">
     <h2 id="hosts">With warm regards</h2>
-    <p><span class="from">Alhaj Ateeq Ahmed</span>
-      H.No. 2-5-392, S.V. Colony, Road No. 3, Subedari, Hanamkonda</p>
+    <p><span class="from">Alhaj Ateeq Ahmed</span></p>
     <div class="actions">
       <a class="btn solid wide" id="share" href="#">Share this invitation on WhatsApp</a>
     </div>
@@ -222,7 +336,7 @@ footer .arabic{font-size:1.2rem;display:block;color:var(--gold)}
 </section>
 
 <footer>
-  <span class="arabic" lang="ar">إن شاء الله</span>
+  <span class="arabic" lang="ar">إِنْ شَاءَ اللَّهُ</span>
   We look forward to welcoming you.
 </footer>
 
@@ -258,6 +372,47 @@ footer .arabic{font-size:1.2rem;display:block;color:var(--gold)}
     if(navigator.share){ navigator.share({title:document.title,text:text}).catch(function(){}); }
     else { window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank", "noopener"); }
   });
+})();
+</script>
+<script>
+(function(){
+  var st=document.getElementById("stage"), btn=document.getElementById("openBtn"), txt=document.getElementById("hintText");
+  var state=0, startY=null, timers=[];
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function open(){
+    if(state) return; state=1;
+    st.classList.add("s1");
+    timers.push(setTimeout(function(){st.classList.add("s2")}, reduce?0:650));
+    timers.push(setTimeout(function(){
+      st.classList.add("s3"); state=2;
+      document.body.classList.remove("locked");
+      btn.classList.add("down"); txt.textContent="Scroll for details";
+    }, reduce?20:1700));
+  }
+  function replay(){
+    timers.forEach(clearTimeout); timers=[];
+    window.scrollTo({top:0,behavior:"smooth"});
+    card.classList.remove("flipped"); fb.setAttribute("aria-pressed","false"); fl.innerHTML='Read in <span class="u" lang="ur">اردو</span>';
+    st.classList.remove("s1","s2","s3"); btn.classList.remove("down"); txt.textContent="Swipe up to open";
+    document.body.classList.add("locked"); state=0;
+  }
+  btn.addEventListener("click",function(){
+    if(state===2) document.querySelector(".sheet").scrollIntoView({behavior:reduce?"auto":"smooth"}); else open();
+  });
+  document.getElementById("seal").addEventListener("click",open);
+  var card=document.getElementById("pcard"), fb=document.getElementById("flipBtn"), fl=document.getElementById("flipLabel");
+  function flip(){
+    var on=card.classList.toggle("flipped");
+    fb.setAttribute("aria-pressed",on);
+    fl.innerHTML= on ? "Read in English" : 'Read in <span class="u" lang="ur">اردو</span>';
+  }
+  fb.addEventListener("click",flip);
+  document.getElementById("scene").addEventListener("click",function(){ if(state===2) flip(); else open(); });
+  document.getElementById("replay").addEventListener("click",replay);
+  st.addEventListener("touchstart",function(e){startY=e.touches[0].clientY},{passive:true});
+  st.addEventListener("touchmove",function(e){ if(!state && startY!==null && startY-e.touches[0].clientY>40) open(); },{passive:true});
+  window.addEventListener("wheel",function(e){ if(!state && e.deltaY>0) open(); },{passive:true});
+  document.addEventListener("keydown",function(e){ if(!state && ["ArrowUp","ArrowDown","PageDown"," "].indexOf(e.key)>-1){e.preventDefault();open();} });
 })();
 </script>
 </body>
