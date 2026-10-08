@@ -1,1 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nadia & Wajid · Nikah, 6 November 2026</title>
+<meta name="description" content="Marriage ceremony of Dr. Nadia Ahmed and Engr. Mohammad Wajid Ali — Friday, 6 November 2026, Hanamkonda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Pinyon+Script&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF8F4; --lattice:#DCD5E0; --maroon:#7A1F2B; --gold:#B08A2E; --gold-soft:#E9DDB8;
+  --ink:#2B1A1D; --muted:#6E5A5E; --card:#FFFFFF; --line:rgba(176,138,46,.45);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#1C1114; --lattice:#3A2A30; --maroon:#E6A3AC; --gold:#D8B661; --gold-soft:#4A3C1E;
+    --ink:#F4E9E6; --muted:#BFA9AD; --card:#25171B; --line:rgba(216,182,97,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1C1114; --lattice:#3A2A30; --maroon:#E6A3AC; --gold:#D8B661; --gold-soft:#4A3C1E;
+  --ink:#F4E9E6; --muted:#BFA9AD; --card:#25171B; --line:rgba(216,182,97,.4);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:"Spectral",Georgia,"Times New Roman",serif;font-weight:300;
+  font-size:1.0625rem;line-height:1.7;background-color:var(--paper);
+  background-image:
+    repeating-linear-gradient(45deg,transparent 0 13px,var(--lattice) 13px 14px),
+    repeating-linear-gradient(-45deg,transparent 0 13px,var(--lattice) 13px 14px);
+  background-attachment:fixed;
+}
+img,svg{max-width:100%}
+a{color:var(--maroon)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.arabic{font-family:"Amiri","Traditional Arabic","Noto Naskh Arabic",serif;direction:rtl}
+.script{font-family:"Pinyon Script","Snell Roundhand","Apple Chancery",cursive;font-weight:400}
 
+/* The card itself */
+.sheet{max-width:640px;margin:0 auto;padding:clamp(14px,4vw,32px)}
+.frame{
+  position:relative;background:var(--card);border:1.5px solid var(--gold);
+  outline:1px solid var(--line);outline-offset:-9px;
+  padding:clamp(72px,16vw,104px) clamp(22px,7vw,56px) clamp(40px,8vw,64px);
+  text-align:center;
+}
+.lanterns{position:absolute;top:0;height:120px;width:110px;pointer-events:none}
+.lanterns.left{left:14px}
+.lanterns.right{right:14px;transform:scaleX(-1)}
+.lanterns g{transform-origin:top center;animation:sway 3.2s ease-in-out 1}
+.lanterns g:nth-child(2){animation-delay:.25s}
+.lanterns g:nth-child(3){animation-delay:.5s}
+@keyframes sway{0%{transform:rotate(0)}25%{transform:rotate(4deg)}60%{transform:rotate(-3deg)}100%{transform:rotate(0)}}
+@media (prefers-reduced-motion:reduce){.lanterns g{animation:none}html{scroll-behavior:auto}}
+
+.bismillah{font-size:clamp(1.6rem,6vw,2.1rem);color:var(--gold);margin:0;line-height:1.6}
+.small{font-size:.9rem;color:var(--muted);font-style:italic;margin:.2rem 0 1.6rem}
+.guardian{font-size:.95rem;color:var(--muted);margin:0 0 1.4rem}
+.guardian strong{display:block;color:var(--ink);font-weight:400;font-style:normal}
+.hosts{font-size:1.15rem;font-weight:600;color:var(--maroon);margin:0}
+.solicit{margin:.4rem auto 1.8rem;max-width:30ch;color:var(--muted);font-style:italic}
+
+h1{margin:0;font-weight:400}
+.name{display:block;font-family:"Pinyon Script","Snell Roundhand",cursive;color:var(--maroon);
+  font-size:clamp(2.6rem,12vw,4rem);line-height:1.15}
+.cred{display:block;font-family:"Spectral",serif;font-size:.85rem;letter-spacing:.08em;color:var(--gold);margin-bottom:.4rem}
+.with{display:block;font-style:italic;font-size:1rem;color:var(--muted);margin:.6rem 0}
+.parent{display:block;font-family:"Spectral",serif;font-size:.95rem;color:var(--muted);font-style:italic;margin-top:.3rem}
+.insha{font-family:"Pinyon Script",cursive;font-size:2rem;color:var(--gold);margin:1.8rem 0 .2rem}
+.date{font-size:1.2rem;font-weight:600;margin:0}
+.hijri{color:var(--muted);font-size:.95rem;margin:0}
+
+/* countdown */
+.count{margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.count p{margin:0 0 .8rem;font-size:.95rem;color:var(--muted)}
+.digits{display:flex;justify-content:center;gap:clamp(10px,4vw,26px)}
+.digits div{min-width:3.6rem}
+.digits b{display:block;font-weight:400;font-size:clamp(2rem,9vw,2.8rem);line-height:1;color:var(--maroon);font-variant-numeric:tabular-nums}
+.digits span{font-size:.8rem;color:var(--muted)}
+.done{font-style:italic;color:var(--maroon)}
+
+/* sections below the card */
+section{max-width:640px;margin:0 auto;padding:0 clamp(14px,4vw,32px) 8px}
+.panel{background:var(--card);border:1px solid var(--line);padding:clamp(24px,6vw,40px);margin-bottom:clamp(14px,4vw,24px)}
+h2{font-family:"Pinyon Script",cursive;font-weight:400;color:var(--maroon);font-size:2.3rem;margin:0 0 1rem;line-height:1.2;text-align:center}
+
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:5.2rem;top:.6rem;bottom:.6rem;width:1px;background:var(--gold)}
+.timeline li{display:grid;grid-template-columns:4.6rem 1fr;gap:1.2rem;padding:.4rem 0 1.4rem;position:relative}
+.timeline li::after{content:"";position:absolute;left:calc(5.2rem - 5px);top:.95rem;width:11px;height:11px;transform:rotate(45deg);background:var(--card);border:1.5px solid var(--gold)}
+.timeline time{font-weight:600;color:var(--gold);text-align:right;font-size:.95rem;padding-top:.15rem}
+.timeline h3{margin:0;font-weight:600;font-size:1.1rem;color:var(--ink)}
+.timeline p{margin:.15rem 0 .4rem;color:var(--muted)}
+.timeline .ev{padding-left:.4rem}
+.map{font-size:.92rem;text-decoration:none;border-bottom:1px solid var(--line)}
+.map:hover{border-bottom-color:var(--maroon)}
+.note{font-size:.88rem;color:var(--muted);font-style:italic;margin:.2rem 0 0;text-align:center}
+
+.dua .arabic{font-size:clamp(1.5rem,6vw,1.9rem);color:var(--maroon);text-align:center;margin:0 0 .6rem;line-height:1.9}
+.dua p{text-align:center;margin:0 auto;max-width:36ch}
+
+.actions{display:grid;gap:10px;grid-template-columns:1fr 1fr;margin-top:1.2rem}
+.btn{display:flex;align-items:center;justify-content:center;gap:.5em;padding:.85rem 1rem;text-decoration:none;
+  font:600 .95rem/1.2 "Spectral",serif;border:1.5px solid var(--maroon);color:var(--maroon);background:transparent;cursor:pointer;text-align:center}
+.btn.solid{background:var(--maroon);color:var(--card)}
+.btn.wide{grid-column:1/-1}
+.contact p{text-align:center;margin:0}
+.from{font-family:"Pinyon Script",cursive;font-size:1.9rem;color:var(--maroon);display:block;line-height:1.3}
+
+footer{text-align:center;padding:24px 16px 40px;color:var(--muted);font-size:.9rem}
+footer .arabic{font-size:1.2rem;display:block;color:var(--gold)}
+@media (max-width:380px){.actions{grid-template-columns:1fr}.timeline::before{left:4.6rem}.timeline li{grid-template-columns:4rem 1fr}.timeline li::after{left:calc(4.6rem - 5px)}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="drop" viewBox="0 0 20 30"><path d="M10 0 C4 8 0 13 0 19 a10 10 0 0 0 20 0 C20 13 16 8 10 0Z"/></symbol>
+  </defs>
+</svg>
+
+<main class="sheet">
+  <article class="frame" aria-labelledby="couple">
+    <svg class="lanterns left" viewBox="0 0 110 120" aria-hidden="true">
+      <g><line x1="14" y1="0" x2="14" y2="78" stroke="var(--gold)" stroke-width="1.5"/><circle cx="14" cy="40" r="3" fill="none" stroke="var(--gold)"/><use href="#drop" x="5" y="76" width="18" height="26" fill="var(--gold)"/></g>
+      <g><line x1="40" y1="0" x2="40" y2="58" stroke="var(--maroon)" stroke-width="1.5"/><circle cx="40" cy="28" r="3" fill="none" stroke="var(--maroon)"/><use href="#drop" x="31" y="56" width="18" height="26" fill="var(--maroon)"/></g>
+      <g><line x1="66" y1="0" x2="66" y2="42" stroke="var(--gold)" stroke-width="1.5"/><circle cx="66" cy="18" r="3" fill="none" stroke="var(--gold)"/><use href="#drop" x="58" y="40" width="16" height="22" fill="var(--gold)"/></g>
+    </svg>
+    <svg class="lanterns right" viewBox="0 0 110 120" aria-hidden="true">
+      <g><line x1="14" y1="0" x2="14" y2="78" stroke="var(--gold)" stroke-width="1.5"/><circle cx="14" cy="40" r="3" fill="none" stroke="var(--gold)"/><use href="#drop" x="5" y="76" width="18" height="26" fill="var(--gold)"/></g>
+      <g><line x1="40" y1="0" x2="40" y2="58" stroke="var(--maroon)" stroke-width="1.5"/><circle cx="40" cy="28" r="3" fill="none" stroke="var(--maroon)"/><use href="#drop" x="31" y="56" width="18" height="26" fill="var(--maroon)"/></g>
+      <g><line x1="66" y1="0" x2="66" y2="42" stroke="var(--gold)" stroke-width="1.5"/><circle cx="66" cy="18" r="3" fill="none" stroke="var(--gold)"/><use href="#drop" x="58" y="40" width="16" height="22" fill="var(--gold)"/></g>
+    </svg>
+
+    <p class="bismillah arabic" lang="ar">بِسْمِ ٱللّٰهِ ٱلرَّحْمٰنِ ٱلرَّحِيْمِ</p>
+    <p class="small">In the name of Allah, the Most Beneficent &amp; the Most Merciful</p>
+
+    <p class="guardian">Under the guardianship of
+      <strong>Janab Alhaj Syed Ahmedullah Sahab (Nana)</strong></p>
+
+    <p class="hosts">Mrs. &amp; Mr. Alhaj Ateeq Ahmed</p>
+    <p class="solicit">solicit your gracious presence on the auspicious occasion of the marriage ceremony of their eldest daughter</p>
+
+    <h1 id="couple">
+      <span class="name">Dr. Nadia Ahmed</span>
+      <span class="cred">BDS</span>
+      <span class="with">with</span>
+      <span class="name">Engr. Mohammad Wajid Ali</span>
+      <span class="cred">M.S. (U.K.)</span>
+      <span class="parent">S/o Late Mohammad Vazeer Ali Sahab</span>
+    </h1>
+
+    <p class="insha">Insha Allah</p>
+    <p class="date">Friday, 6th November 2026</p>
+    <p class="hijri">25th Jamadiul-Awwal 1448 Hijri</p>
+
+    <div class="count" aria-live="polite">
+      <p id="countLabel">Counting down to the Nikah</p>
+      <div class="digits" id="digits">
+        <div><b id="d">--</b><span>days</span></div>
+        <div><b id="h">--</b><span>hours</span></div>
+        <div><b id="m">--</b><span>minutes</span></div>
+        <div><b id="s">--</b><span>seconds</span></div>
+      </div>
+    </div>
+  </article>
+</main>
+
+<section aria-labelledby="sched">
+  <div class="panel">
+    <h2 id="sched">The day</h2>
+    <ol class="timeline">
+      <li>
+        <time datetime="2026-11-06">After Asr</time>
+        <div class="ev">
+          <h3>Nikah</h3>
+          <p>Masjid-e-Qurd (Choti Masjid), Subedari, Hanamkonda</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&query=Choti+Masjid+Subedari+Hanamkonda" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-11-06T21:00+05:30">9:00 pm</time>
+        <div class="ev">
+          <h3>Dinner</h3>
+          <p>New Royal Convention, Opp. Post Office, Subedari, Hanamkonda</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&query=New+Royal+Convention+Subedari+Hanamkonda" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </li>
+    </ol>
+    <p class="note">All times are India Standard Time.</p>
+    <div class="actions">
+      <a class="btn solid wide" target="_blank" rel="noopener"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nikah%20%E2%80%93%20Nadia%20%26%20Wajid&dates=20261106T103000Z/20261106T180000Z&details=Nikah%20after%20Namaz-e-Asar%20at%20Masjid-e-Qurd%20(Choti%20Masjid).%20Dinner%20at%209%3A00%20pm%20at%20New%20Royal%20Convention.&location=Subedari%2C%20Hanamkonda">Add to Google Calendar</a>
+    </div>
+  </div>
+</section>
+
+<section class="dua" aria-label="Dua for the couple">
+  <div class="panel">
+    <p class="arabic" lang="ar">بَارَكَ ٱللّٰهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+    <p>Oh Allah, guide this marriage to the best of understanding, happiness, prosperity and success. Aameen.</p>
+  </div>
+</section>
+
+<section class="contact" aria-labelledby="hosts">
+  <div class="panel">
+    <h2 id="hosts">With warm regards</h2>
+    <p><span class="from">Alhaj Ateeq Ahmed</span>
+      H.No. 2-5-392, S.V. Colony, Road No. 3, Subedari, Hanamkonda</p>
+    <div class="actions">
+      <a class="btn solid wide" id="share" href="#">Share this invitation on WhatsApp</a>
+    </div>
+    <p class="note" style="margin-top:1.2rem">With best compliments from Mushtaq Ahmed, near &amp; dear</p>
+  </div>
+</section>
+
+<footer>
+  <span class="arabic" lang="ar">إن شاء الله</span>
+  We look forward to welcoming you.
+</footer>
+
+<script>
+(function(){
+  // Nikah after Asr ≈ 4:00 pm IST on 6 Nov 2026
+  var nikah = new Date("2026-11-06T16:00:00+05:30").getTime();
+  var dinner = new Date("2026-11-06T21:00:00+05:30").getTime();
+  var end = new Date("2026-11-07T00:00:00+05:30").getTime();
+  var el = {d:document.getElementById("d"),h:document.getElementById("h"),m:document.getElementById("m"),s:document.getElementById("s")};
+  var label = document.getElementById("countLabel"), digits = document.getElementById("digits");
+  function pad(n){return String(n).padStart(2,"0")}
+  function tick(){
+    var now = Date.now(), target = now < nikah ? nikah : dinner;
+    if(now >= end){
+      label.className="done"; label.textContent="Alhamdulillah. Jazakallah khair for celebrating with us.";
+      digits.hidden = true; return;
+    }
+    if(now >= dinner){ label.textContent="Dinner is being served at New Royal Convention."; digits.hidden=true; return; }
+    label.textContent = now < nikah ? "Counting down to the Nikah" : "The Nikah has taken place. Dinner begins in";
+    var t = Math.max(0, target - now);
+    el.d.textContent = Math.floor(t/864e5);
+    el.h.textContent = pad(Math.floor(t/36e5)%24);
+    el.m.textContent = pad(Math.floor(t/6e4)%60);
+    el.s.textContent = pad(Math.floor(t/1e3)%60);
+    setTimeout(tick, 1000 - (now % 1000));
+  }
+  tick();
+
+  document.getElementById("share").addEventListener("click", function(e){
+    e.preventDefault();
+    var text = "Assalamu Alaikum. You are warmly invited to the Nikah of Dr. Nadia Ahmed with Engr. Mohammad Wajid Ali, Insha Allah on Friday, 6th November 2026 in Hanamkonda. Details: " + location.href;
+    if(navigator.share){ navigator.share({title:document.title,text:text}).catch(function(){}); }
+    else { window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank", "noopener"); }
+  });
+})();
+</script>
+</body>
+</html>
